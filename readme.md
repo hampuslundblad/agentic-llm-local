@@ -1,3 +1,19 @@
+# How to run 
+
+## App
+
+```bash
+npm i 
+npm run dev
+```
+
+## Api 
+```bash 
+fastapi dev main.py
+```
+
+
+
 Created with inspriation from guides
 
 # Research bot 

@@ -18,6 +18,8 @@ from langgraph.checkpoint.memory import MemorySaver
 from langgraph.types import Command, interrupt
 from langchain_core.tools import tool
 
+from matplotlib import pyplot as plt
+from matplotlib import image as mpimg
 
 class State(TypedDict):
     # Messages have the type "list". The `add_messages` function

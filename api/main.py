@@ -1,21 +1,17 @@
 from fastapi import FastAPI
-from chat_bot.main import stream_graph_updates
-app = FastAPI()
+from judge_bot_rag.main import stream_graph_updates
 from pydantic import BaseModel
+
+app = FastAPI()
 
 class Message(BaseModel):
     content: str
 
 @app.get("/")
 async def root():
-    response = stream_graph_updates("What is the capital of France?")
-    return {"message": response}
+    return {"message": "yes the api works"}
 
 @app.post("/api/message")
 async def post_message(message: Message):
     response = stream_graph_updates(message.content)
     return {"message": response}
-
-@app.get("/items/{item_id}")
-async def read_item(item_id: int):
-    return {"item_id": item_id}
